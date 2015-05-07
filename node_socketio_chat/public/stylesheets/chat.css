@@ -1,0 +1,144 @@
+body{
+    padding: 0 50px 50px 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.chat-body{
+    overflow-y:scroll;
+    height:555px;
+    padding:0px;
+    background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
+    background: #dddddd;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color:#dddddd;
+}
+
+.list-body{
+    overflow-y:scroll;
+    height:450px;
+    padding:0px;
+}
+
+.msg-list-body{
+    margin:8px;
+}
+
+.msg-wrap{
+    margin-top: 0px;
+    margin-bottom: 8px;
+    padding: 0px;
+
+}
+
+.msg-content{
+    margin-top: 14px;
+    padding: 8px;
+    padding-bottom: 4px;
+    border:1px solid #ccc;
+    border-radius: 4px;
+    word-break:break-all;
+    background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
+    background: #dfe6f6;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color:#ffffff;
+}
+
+.msg-content:before {
+    position:absolute;
+    content:"\00a0";
+    width:0px;
+    height:0px;
+    border-width:8px 18px 8px 0;
+    border-style:solid;
+    border-color: #ffffff transparent transparent transparent;
+    top:15px;
+    left:-18px;
+}
+
+.msg-content2{
+    position: relative;
+    clear: both;
+    display: inline-block;
+    padding: 8px 20px 8px 10px;
+    margin: 10px 0 20px 20px;
+    font: 16px/20px 'Noto Sans', sans-serif;
+    border-radius: 10px;
+    background-color:#ffffff;
+}
+
+.msg-content2:before {
+    position:absolute;
+    content:"\00a0";
+    width:0px;
+    height:0px;
+    border-width:8px 18px 8px 0;
+    border-style:solid;
+    border-color:transparent #ffffff transparent transparent;
+    top:10px;
+    left:-18px;
+}
+
+
+.img-icon{
+    width: 64px;
+    height: 64px;
+    border:2px solid #ccc;
+    border-radius: 4px;
+}
+
+.msg-head{
+    z-index:100;
+}
+
+.msg-name{
+    margin-left: 8px;
+}
+
+.msg-time{
+    margin-left: 8px;
+}
+
+.list-table td:hover{
+    cursor: pointer;
+    margin-top: -1px;
+    margin-bottom: 0px;
+}
+
+
+.emotion-panel{
+    position:fixed;
+    display:none;
+    z-index:200;
+}
+
+.faceAll:hover .face{
+    background-position:0px -120px;
+}
+
+.face{
+    display:block;
+    width:20px;
+    height:20px;
+    background:url(../images/facebg_1.png) 0px -100px no-repeat;
+    float:left;
+}
+
+.qqFace{margin-top:4px;background:#fff;padding:2px;border:1px #dfe6f6 solid;}
+.qqFace table td{padding:0px;}
+.qqFace table td img{cursor:pointer;border:1px #fff solid;}
+.qqFace table td img:hover{border:1px #0066cc solid;}

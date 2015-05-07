@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//cdnjscn.b0.upaiyun.com/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/chat.css">
+    <script>
+    </script>
+  </head>
+  <body>
+  <div class="tip">
+    <h4>【NODEJS............】   <span></span></h4>
+    <h5>Tips: 爱咋滴咋滴</h5>
+  </div>
+  <div id="container">
+    <div class="row" >
+      <div class="col-sm-4">
+        <div class="col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="row">
+            <div class="col-sm-8">
+              <span class="glyphicon glyphicon-user"></span>
+              &nbsp;个人信息
+              </div>
+            <div class="col-sm-4">
+              <span class="glyphicon glyphicon-cog"></span>
+              &nbsp;设置
+              </div>
+              </div>
+          </div>
+              <div class="panel-body">
+                <div class="col-sm-9"><h5 id="nick_name">昵称:</h5></div>
+                <div class="col-sm-3"><button class="btn btn-default" onclick="onClickChangeNickname()">修改</button></div>
+                </div>
+          </div>
+        </div>
+
+
+
+        <!-- 在线列表 -->
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="glyphicon glyphicon-list"></span>
+              &nbsp;在线名单
+            </div>
+            <div class="panel-body list-body">
+              <table class="table table-hover list-table">
+                <!--<tr>-->
+                <!--<td>test</td>-->
+                <!--</tr>-->
+              </table>
+            </div>
+            <div class="panel-footer" id="list-count">当前在线：0人</div>
+          </div>
+      </div>
+        </div>
+
+      <!-- 聊天区 -->
+      <div class="col-sm-8">
+        <!-- 聊天内容 -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <span class="glyphicon glyphicon-earphone"></span>
+            &nbsp;聊天内容
+          </div>
+          <div class="panel-body chat-body">
+            <div class="msg-list-body">
+
+            </div>
+          </div>
+        </div>
+
+        <!--信息发送区-->
+        <div class="input-group input-group-lg">
+            <span class="input-group-btn dropup">
+              <button type="button" class="btn btn-default dropdown-toggle faceAll" data-toggle="dropdown" id="face-btn">
+                <textarea class="input" id="saytext" name="saytext" hidden="hidden"></textarea>
+                <span class="face"></span>
+              </button>
+            </span>
+          <input type="text" class="form-control" id="chatContent" name="chatContent" placeholder="请输入聊天内容" oninput="controlSendBtn()">
+           <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" onclick="onClickSendMessage()" id="sendBtn" disabled="true">
+                      发送
+                      <span class="glyphicon glyphicon-send"></span>
+                    </button>
+                </span>
+        </div>
+        </div>
+      </div>
+
+      </div>
+
+  <!-- 模态框（Modal） -->
+  <div class="modal fade" id="chat-modal" tabindex="-1" role="dialog"
+       aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close"
+                  data-dismiss="modal" aria-hidden="true">
+            &times;
+          </button>
+          <h4 class="modal-title" id="myModalLabel">
+           请设置昵称
+          </h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-8 col-sm-push-2">
+            <div class="alert alert-danger" role="alert" id="nickname-error" style="display: none">
+              <span class="glyphicon glyphicon-remove"></span>
+              请填写昵称
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon">昵称</span>
+              <input type="text" id="nickname-edit" class="form-control" placeholder="请输入昵称">
+            </div>
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="submitNickName()">
+            确认提交
+          </button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+
+
+
+
+  <script src="//cdnjscn.b0.upaiyun.com/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//cdnjscn.b0.upaiyun.com/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <script src="//cdnjscn.b0.upaiyun.com/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="/javascripts/socket.io.js"></script>
+  <script src="/javascripts/init.js"></script>
+  <script src="/javascripts/jquery.qqFace.js"></script>
+  <script src="/javascripts/chat_socket.js"></script>
+  <script src="/javascripts/chat_common.js"></script>
+  </body>
+</html>
